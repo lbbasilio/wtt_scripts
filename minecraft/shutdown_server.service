@@ -1,0 +1,11 @@
+[Unit]
+Description=Shutdown minecraft server before machine shutdown/reboot
+DefaultDependencies=no
+Before=halt.target reboot.target shutdown.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/ubuntu/shutdown_server.sh
+
+[Install]
+WantedBy=halt.target reboot.target shutdown.target
